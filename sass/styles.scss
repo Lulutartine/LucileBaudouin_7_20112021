@@ -41,11 +41,17 @@ header {
             font-size: 18px;
             width: 1130px;
             height: 65px;
+            outline: none;
             padding: 0 20px;
+            border-color: $lightGrey;
             border-radius: 5px 0 0 5px;
         }
         >#search-input:focus {
             outline: none;
+        }
+        // Pseudo-élément "placeholder" pour modifier son style.
+        >#search-input::placeholder {
+            color: darken($lightGrey, 60);
         }
 
         // Bouton avec loupe.
@@ -179,12 +185,16 @@ header {
             // Input de chaque menu ouvert.
             >.drop-input {
                 display: flex;
-                color: lighten($lightGrey, 10);
+                color: white;
                 font-size: 18px;
                 width: 600px;
                 height: 30px;
                 border-radius: 5px;
                 border-width: 1px;
+            }
+            // Pseudo-élément "placeholder" pour modifier son style.
+            >.drop-input::placeholder {
+                color: darken($lightGrey, 60);
             }
             
             // Input des ingrédients.
