@@ -1,9 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "dependencies": {
-    "bootstrap": "^5.1.3"
-  }
-=======
   "name": "projet07_lespetitsplats",
   "version": "1.0.0",
   "description": "Ce travail est réalisé dans le cadre de la formation \"Développeur d'applications front-end\" d'OpenClassrooms.",
@@ -35,5 +30,4 @@
   },
   "dependencies": {},
   "keywords": []
->>>>>>> Stashed changes
 }

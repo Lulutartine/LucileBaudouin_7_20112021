@@ -39,13 +39,8 @@ header {
             background: $lightGrey;
             font-family: "Lato", sans-serif;
             font-size: 18px;
-<<<<<<< Updated upstream
             width: 1130px;
             height: 65px;
-=======
-            width: 94%;
-            outline: none;
->>>>>>> Stashed changes
             padding: 0 20px;
             border-radius: 5px 0 0 5px;
             border-width: 0px;
@@ -53,14 +48,11 @@ header {
         >#search-input:focus {
             outline: none;
         }
-<<<<<<< Updated upstream
-=======
         // Pseudo-élément "placeholder" pour modifier son style.
         >#search-input::placeholder {
             color: black;
             opacity: 25%;
         }
->>>>>>> Stashed changes
 
         // Bouton avec loupe.
         >#search-button {
@@ -199,13 +191,10 @@ header {
                 border-radius: 5px;
                 border-width: 0px;
             }
-<<<<<<< Updated upstream
-=======
             // Pseudo-élément "placeholder" pour modifier son style.
             >.drop-input::placeholder {
                 color: $lightGrey;
             }
->>>>>>> Stashed changes
             
             // Input des ingrédients.
             >#drop1-input {
