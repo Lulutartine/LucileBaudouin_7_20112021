@@ -31,20 +31,19 @@ header > #search > #search-input, header > #search > #search-button {
   font-size: 18px;
   width: 1130px;
   height: 65px;
-  outline: none;
   padding: 0 20px;
-  border-color: #E7E7E7;
   border-radius: 5px 0 0 5px;
+  border-width: 0px;
 }
 header > #search > #search-input:focus {
   outline: none;
 }
 header > #search > #search-input::placeholder {
-  color: #4e4e4e;
+  color: black;
+  opacity: 25%;
 }
 header > #search > #search-button {
-  width: 70px;
-  height: 69px;
+  width: 6%;
   padding: 0;
   border-radius: 0 5px 5px 0;
 }
@@ -148,19 +147,37 @@ header > #search > #search-button > #loupe {
   width: 600px;
   height: 30px;
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 0px;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > .drop-input::placeholder {
-  color: #4e4e4e;
+  color: #E7E7E7;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop1-input {
   background: #3282F7;
+  border-color: transparent;
+  color: white;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop1-input:focus-visible {
+  border-style: none;
+  outline-style: none;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop2-input {
   background: #68D9A4;
+  border-color: transparent;
+  color: white;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop2-input:focus-visible {
+  border-style: none;
+  outline-style: none;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop3-input {
   background: #ED6454;
+  border-color: transparent;
+  color: white;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop3-input:focus-visible {
+  border-style: none;
+  outline-style: none;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > .up-arrow {
   display: flex;
@@ -226,12 +243,14 @@ main > .section > .section-top {
   background: #C7BEBE;
   width: 380px;
   height: 178px;
+  border-radius: 5px 5px 0px 0px;
 }
 main > .section > .section-bottom {
   background: #E7E7E7;
   font-family: "Lato", sans-serif;
   width: 380px;
   height: 186px;
+  border-radius: 0px 0px 5px 5px;
 }
 main > .section > .section-bottom > .bottom-title-time {
   display: flex;
@@ -284,4 +303,4 @@ main > .section > .section-bottom > .bottom-descr > .bottom-recipe {
   margin-bottom: 16px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=style.css.map */
