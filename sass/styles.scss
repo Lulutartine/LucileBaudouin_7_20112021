@@ -1,4 +1,3 @@
-// Importation du fichier de variables.
 @import "libs/variables.scss";
 
 body {
@@ -8,7 +7,6 @@ body {
     margin: 0;
 }
 
-// Logo, titre et barre de recherche.
 header {
     width: $page;
     color: #D04F4F;
@@ -16,25 +14,20 @@ header {
     font-weight: 700;
     text-align: center;
 
-    // Paragraphe du logo.
     >#logo-p {
         line-height: 0;
         margin: auto 0;
     }
 
-    // Titre.
     >h1 {
         width: 268px;
         height: 47px;
         margin: 0 auto 20px auto;
     }
 
-    // Barre de recherche.
     >#search {
         display: flex;
         justify-content: center;
-
-        // Champ de saisie et bouton.
         >#search-input, >#search-button {
             background: $lightGrey;
             font-family: "Lato", sans-serif;
@@ -48,13 +41,10 @@ header {
         >#search-input:focus {
             outline: none;
         }
-        // Pseudo-élément "placeholder" pour modifier son style.
         >#search-input::placeholder {
             color: black;
             opacity: 25%;
         }
-
-        // Bouton avec loupe.
         >#search-button {
             width: 6%;
             padding: 0;
@@ -62,8 +52,6 @@ header {
             &:hover, &:focus {
                 background: darken($lightGrey, 10);
             }
-
-            // Icône seule.
             >#loupe {
                 margin: 19px;
             }
@@ -71,7 +59,6 @@ header {
     }
 }
 
-// Ligne d'apparition des tags.
 #tagLine {
     display: flex;
     align-items: flex-end;
@@ -79,7 +66,6 @@ header {
     justify-content: flex-start;
     margin-top: 30px;
 
-    // Chacun des tags dans chacun des 3 tableaux.
     >.chosen-tag-1, >.chosen-tag-2, >.chosen-tag-3 {
         display: flex;
         align-items: center;
@@ -91,39 +77,32 @@ header {
         border-radius: 5px;
         margin: 0 10px 10px 0;
 
-        // Texte du tag.
         >.tag-text {
             margin-right: 10px;
         }
 
-        // Icône de fermeture.
         >.tag-img {
             cursor: pointer;
         }
     }
 
-    // Chacun des tags "ingrédients".
     >.chosen-tag-1 {
         background: $colorIngr;
     }
 
-    // Chacun des tags "appareils".
     >.chosen-tag-2 {
         background: $colorAppa;
     }
 
-    // Chacun des tags "ustensiles".
     >.chosen-tag-3 {
         background: $colorUste;
     }
 }
 
-// Ligne des menus déroulants.
 #dropdown-line {
     display: flex;
     margin-top: 10px;
     
-    // Menus fermés.
     >.dropdown-closed {
         display: flex;
         align-items: center;
@@ -140,25 +119,21 @@ header {
         border-radius: 5px;
     }
     
-    // Menu "Ingrédients" fermé et ouvert.
     >#drop-ingr-closed, #drop-ingr-open {
         background: $colorIngr;
         margin: 0 10px 10px 0;
     }
     
-    // Menu "Appareils" fermé et ouvert.
     >#drop-appa-closed, #drop-appa-open {
         background: $colorAppa;
         margin: 0 10px 10px 10px;
     }
     
-    // Menu "Ustensiles" fermé et ouvert.
     >#drop-uste-closed, #drop-uste-open {
         background: $colorUste;
         margin: 0 0 10px 10px;
     }
     
-    // Menus ouverts.
     >.dropdown-open {
         display: flex;
         align-items: center;
@@ -173,7 +148,6 @@ header {
         padding: 0 20px 0 20px;
         border-radius: 5px;
     
-        // 1ère ligne avec l'input et la flèche vers le haut.
         >.drop-open-1stLine {
             display: flex;
             align-items: center;
@@ -181,7 +155,6 @@ header {
             width: 630px;
             margin: 20px 40px 0 40px;
         
-            // Input de chaque menu ouvert.
             >.drop-input {
                 display: flex;
                 color: lighten($lightGrey, 10);
@@ -191,12 +164,10 @@ header {
                 border-radius: 5px;
                 border-width: 0px;
             }
-            // Pseudo-élément "placeholder" pour modifier son style.
             >.drop-input::placeholder {
                 color: $lightGrey;
             }
             
-            // Input des ingrédients.
             >#drop1-input {
                 background: $colorIngr;
                 border-color: transparent;
@@ -207,7 +178,6 @@ header {
                 }
             }
             
-            // Input des appareils.
             >#drop2-input {
                 background: $colorAppa;
                 border-color: transparent;
@@ -218,7 +188,6 @@ header {
                 }
             }
             
-            // Input des ustensiles.
             >#drop3-input {
                 background: $colorUste;
                 border-color: transparent;
@@ -229,13 +198,11 @@ header {
                 }
             }
             
-            // Flèche vers le haut.
             >.up-arrow {
                 display: flex;
             }
         }
         
-        // Partie contenant chacune des 3 listes.
         >.expanded-drop {
             display: flex;
             align-items: flex-start;
@@ -247,7 +214,6 @@ header {
             padding: 0 20px 0 20px;
             border-radius: 5px;
 
-            // Chaque élément de la liste.
             >.exp-drop-line {
                 display: inline-block;
                 width: 33%;
@@ -258,34 +224,28 @@ header {
             }
         }
         
-        // Liste des ingrédients.
         >#expanded-drop1 {
             background: $colorIngr;
         }
         
-        // Liste des appareils.
         >#expanded-drop2 {
             background: $colorAppa;
         }
         
-        // Liste des ustensiles.
         >#expanded-drop3 {
             background: $colorUste;
         }
     }
 }
 
-// Ligne du message "Aucune recette...".
 #no-recipe {
     text-align: center;
     margin-top: 20px;
 
-    // Paragraphe caché.
     >.no-recipe-line {
         display: none;
     }
     
-    // Paragraphe visible.
     >.no-recipe-line-open {
         display: inline;
         color: #D04F4F;
@@ -297,20 +257,17 @@ header {
     }
 }
 
-// Contenu principal.
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
 
-    // Chaque carte de recette.
     >.section {
         width: $card;
         height: 364px;
         margin-bottom: 50px;
 
-        // Haut de la carte pour l'emplacement de l'image.
         >.section-top {
             background: #C7BEBE;
             width: $card;
@@ -318,7 +275,6 @@ main {
             border-radius: 5px 5px 0px 0px;
         }
 
-        // Bas de la carte pour les textes.
         >.section-bottom {
             background: $lightGrey;
             font-family: "Lato", sans-serif;
@@ -326,7 +282,6 @@ main {
             height: 186px;
             border-radius: 0px 0px 5px 5px;
 
-            // Titre et durée.
             >.bottom-title-time {
                 display: flex;
                 justify-content: center;
@@ -335,7 +290,6 @@ main {
                 height: $cardTitle;
                 padding: 0 20px;
 
-                // Titre seul.
                 >.bottom-title {
                     display: flex;
                     align-items: center;
@@ -343,7 +297,6 @@ main {
                     height: $cardTitle;
                 }
 
-                // Durée seule.
                 >.bottom-time {
                     display: flex;
                     align-items: center;
@@ -352,14 +305,12 @@ main {
                     width: 90px;
                     height: $cardTitle;
 
-                    // Icône de durée seule.
                     >#temps {
                         margin-right: 5px;
                     }
                 }
             }
 
-            // Description : ingrédients et recette.
             >.bottom-descr {
                 display: flex;
                 justify-content: center;
@@ -368,7 +319,6 @@ main {
                 height: 136px;
                 padding: 0 20px;
 
-                // Ingrédients seuls.
                 >.bottom-ingr {
                     display: flex;
                     align-items: flex-start;
@@ -379,7 +329,6 @@ main {
                     padding-right: 10px;
                 }
 
-                // Recette seule.
                 >.bottom-recipe {
                     font-family: "Roboto", sans-serif;
                     width: 170px;
