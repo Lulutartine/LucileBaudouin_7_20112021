@@ -32,6 +32,7 @@ export default function triParFilter(callback) {
     return;
   }
   // Si 3 caractères ou plus sont tapés.
+<<<<<<< Updated upstream
   // eslint-disable-next-line no-else-return
   else {
     // Le contenu de l'input est mis en minuscule et ses accents sont retirés.
@@ -40,6 +41,15 @@ export default function triParFilter(callback) {
     mainSection.innerText = '';
 
     // La filtration se fait sur le nom ou sur la description ou sur les ingrédients.
+=======
+  else {
+    // Le contenu de l'input est mis en minuscule et ses accents sont retirés.
+    // La constante récupère le contenu modifié.
+    const lowerSearchInput = searchInput.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    mainSection.innerText = '';
+
+    // Le filtre est appliqué sur le nom ou sur la description ou sur les ingrédients.
+>>>>>>> Stashed changes
     newRecipes = recipes.filter((element) =>
       element.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchInput)
       || element.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchInput)

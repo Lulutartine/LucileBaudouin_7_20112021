@@ -1,8 +1,8 @@
 // Récupération des données "recipes" du fichier.
 import { recipes } from '../recipes';
-
 // Récupération des données dynamiques pour chaque carte recette.
 import RecipeFactory from './recipeFactory';
+<<<<<<< Updated upstream
 
 // Récupération de l'implémentation 2 de l'algorithme de recherche : tri des menus et des recettes.
 import triParFilter from '../implementation2';
@@ -10,11 +10,37 @@ import triParFilter from '../implementation2';
 // Constante globale pour récupérer le contenu de l'input principal.
 const searchInput = document.querySelector('#search-input');
 
+<<<<<<< Updated upstream
 // Listener utilisant l'implémentation 2.
 searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
+=======
+// Récupère le contenu du champ de recherche principal durant la frappe.
+// FONCTION DESACTIVEE !!
+/*
+function getSearchInputText(el) {
+  el.preventDefault();
+  // eslint-disable-next-line no-console
+  console.log(el.target.value);
+}
+searchInput.addEventListener('input', getSearchInputText);
+*/
+
+// Listener utilisant l'implémentation 1.
+searchInput.addEventListener('input', () => { triParBoucle(showRecipes2); });
+=======
+// Récupération de l'implémentation de l'algorithme 2 de recherche : tri des menus et des recettes.
+import triParFilter from '../implementation2';
+
+// Constante globale pour récupérer le contenu de l'input principal.
+const searchInput = document.querySelector('#search-input');
+// Listener utilisant l'implémentation 2.
+searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 // Constantes globales pour les menus.
 const dropdownLine = document.querySelector('#dropdown-line');
+
 // Création du 1er menu déroulant.
 const menu1 = document.createElement('a');
 menu1.href = '';
@@ -142,13 +168,10 @@ menuOpen3.appendChild(fullList3);
 const chosenTags1 = [];
 const chosenTags2 = [];
 const chosenTags3 = [];
-
 // Variable globale pour chaque tag quel que soit le tableau.
 let eachTag = '';
-
 // Constante globale pour la partie affichant les recettes.
 const mainSection = document.querySelector('#main-section');
-
 // Variables globales pour les tableaux des recettes triées par les tags.
 let newTagRecipes1 = [];
 let newTagRecipes2 = [];
