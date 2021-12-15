@@ -31,11 +31,16 @@ header > #search > #search-input, header > #search > #search-button {
   font-size: 18px;
   width: 1130px;
   height: 65px;
+  outline: none;
   padding: 0 20px;
+  border-color: #E7E7E7;
   border-radius: 5px 0 0 5px;
 }
 header > #search > #search-input:focus {
   outline: none;
+}
+header > #search > #search-input::placeholder {
+  color: #4e4e4e;
 }
 header > #search > #search-button {
   width: 70px;
@@ -144,6 +149,9 @@ header > #search > #search-button > #loupe {
   height: 30px;
   border-radius: 5px;
   border-width: 1px;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > .drop-input::placeholder {
+  color: #4e4e4e;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop1-input {
   background: #3282F7;

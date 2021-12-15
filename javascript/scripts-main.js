@@ -1,33 +1,17 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-shadow */
-/* eslint-disable no-use-before-define */
 // Récupération des données "recipes" du fichier.
 import { recipes } from '../recipes';
 
 // Récupération des données dynamiques pour chaque carte recette.
 import RecipeFactory from './recipeFactory';
 
-// Récupération de l'implémentation 1 de l'algorithme de recherche : tri des menus et des recettes.
-import triParBoucle from '../implementation1';
+// Récupération de l'implémentation 2 de l'algorithme de recherche : tri des menus et des recettes.
+import triParFilter from '../implementation2';
 
 // Constante globale pour récupérer le contenu de l'input principal.
 const searchInput = document.querySelector('#search-input');
 
-// Récupère le contenu du champ de recherche principal durant la frappe.
-// FONCTION DESACTIVEE !!
-/*
-function getSearchInputText(el) {
-  el.preventDefault();
-  // eslint-disable-next-line no-console
-  console.log(el.target.value);
-}
-searchInput.addEventListener('input', getSearchInputText);
-*/
-
-// Listener utilisant l'implémentation 1.
-searchInput.addEventListener('input', () => { triParBoucle(showRecipes2); });
+// Listener utilisant l'implémentation 2.
+searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
 
 // Constantes globales pour les menus.
 const dropdownLine = document.querySelector('#dropdown-line');
@@ -310,10 +294,6 @@ function findByTags() {
 }
 
 // Fonction d'affichage du menu déroulant "Ingrédients", fermé et ouvert.
-// C'est une fonction "auto-exécutante" comme celle ci-dessous en exemple.
-// (function example() {
-// console.log('Bonjour !');
-// }());
 (function menuIngr() {
   let everyIngredient = recipes.map((recipe) => recipe.ingredients);
   // Dans le tableau "recipes" des recettes, la fonction "map()" prend chaque élément,
@@ -357,20 +337,18 @@ function findByTags() {
   input1.addEventListener('click', clickInput);
 
   // Récupère le contenu de l'input du menu déroulant durant la frappe
-  // pour faire le tri dans la liste des ingrédients affichés et dans les recettes.
+  // pour faire le tri dans la liste des ingrédients affichés.
   function getInputText() {
     const searchMenu = input1.value;
+    const lowerSearchMenu = searchMenu.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     // Constante utilisée pour contenir les ingrédients triés.
     const newIngredients = [];
 
-    // Variable utilisée pour contenir les recettes triées.
-    const menuInputRecipes = [];
-
     // On vide la liste.
     fullList1.innerText = '';
 
-    // Si 1 ou 2 caractères sont tapés, tous les ingrédients et toutes les recettes restent.
+    // Si 1 ou 2 caractères sont tapés, tous les ingrédients restent.
     if (searchMenu.length <= 2) {
       for (const ingredient of everyIngredient) {
         const dropLine = document.createElement('span');
@@ -383,12 +361,10 @@ function findByTags() {
       showRecipes2();
     }
     // Sinon, si 3 caractères ou plus sont tapés, seuls apparaissent les ingrédients
-    // appartenant aux recettes dont au moins un ingrédient contient la valeur de l'input,
-    // ainsi que les recettes correspondantes.
+    // dont le nom (en minuscules et sans accent) contient la valeur de l'input.
     else {
-      // Tri des ingrédients.
       for (const newIngred of everyIngredient) {
-        if (newIngred.includes(searchMenu)) {
+        if (newIngred.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchMenu)) {
           newIngredients.push(newIngred);
           const dropLine = document.createElement('span');
           dropLine.className = 'exp-drop-line';
@@ -399,22 +375,6 @@ function findByTags() {
           dropLine.addEventListener('click', showTag1);
         }
       }
-      // Tri des recettes.
-      for (const recipe of recipes) {
-        // Pour chaque recette, on crée le tableau de ses noms d'ingrédients.
-        let everyRecipeIngr = recipe.ingredients;
-        everyRecipeIngr = everyRecipeIngr.flat();
-        everyRecipeIngr = everyRecipeIngr.map((ingr) => ingr.ingredient);
-        everyRecipeIngr = everyRecipeIngr.sort();
-
-        // Si au moins l'un des ingrédients contient la valeur de l'input,
-        // la recette est ajoutée au tableau des recettes triées par input.
-        const inclut = (element) => element.includes(searchMenu);
-        if (everyRecipeIngr.some(inclut) === true) {
-          menuInputRecipes.push(recipe);
-        }
-      }
-      showRecipes2(menuInputRecipes);
     }
   }
   input1.addEventListener('input', getInputText);
@@ -478,7 +438,6 @@ function showTag2(e) {
 }
 
 // Fonction d'affichage du menu déroulant "Appareils", fermé et ouvert.
-// C'est une fonction "auto-exécutante" comme celle au dessus.
 (function menuAppa() {
   let everyAppliance = recipes.map((recipe) => recipe.appliance);
   // Dans le tableau "recipes" des recettes, la fonction "map()" prend chaque élément,
@@ -516,20 +475,18 @@ function showTag2(e) {
   input2.addEventListener('click', clickInput);
 
   // Récupère le contenu de l'input du menu déroulant durant la frappe
-  // pour faire le tri dans la liste des appareils affichés et dans les recettes.
+  // pour faire le tri dans la liste des appareils affichés.
   function getInputText() {
     const searchMenu = input2.value;
+    const lowerSearchMenu = searchMenu.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     // Constante utilisée pour contenir les appareils triés.
     const newAppliances = [];
 
-    // Variable utilisée pour contenir les recettes triées.
-    const menuInputRecipes = [];
-
     // On vide la liste.
     fullList2.innerText = '';
 
-    // Si 1 ou 2 caractères sont tapés, tous les appareils et toutes les recettes restent.
+    // Si 1 ou 2 caractères sont tapés, tous les appareils restent.
     if (searchMenu.length <= 2) {
       for (const appli of everyAppliance) {
         const dropLine = document.createElement('span');
@@ -542,12 +499,10 @@ function showTag2(e) {
       showRecipes2();
     }
     // Sinon, si 3 caractères ou plus sont tapés, seuls apparaissent les appareils
-    // appartenant aux recettes dont l'appareil contient la valeur de l'input,
-    // ainsi que les recettes correspondantes.
+    // dont le nom (en minuscules et sans accent) contient la valeur de l'input.
     else {
-      // Tri des appareils.
       for (const newAppli of everyAppliance) {
-        if (newAppli.includes(searchMenu)) {
+        if (newAppli.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchMenu)) {
           newAppliances.push(newAppli);
           const dropLine = document.createElement('span');
           dropLine.className = 'exp-drop-line';
@@ -558,18 +513,6 @@ function showTag2(e) {
           dropLine.addEventListener('click', showTag2);
         }
       }
-      // Tri des recettes.
-      for (const recipe of recipes) {
-        // Pour chaque recette, on récupère son nom d'appareil (un seul par recette).
-        const everyRecipeApp = recipe.appliance;
-
-        // Si le nom d'appareil contient la valeur de l'input,
-        // la recette est ajoutée au tableau des recettes triées par input.
-        if (everyRecipeApp.includes(searchMenu)) {
-          menuInputRecipes.push(recipe);
-        }
-      }
-      showRecipes2(menuInputRecipes);
     }
   }
   input2.addEventListener('input', getInputText);
@@ -633,7 +576,6 @@ function showTag3(e) {
 }
 
 // Fonction d'affichage du menu déroulant "Ustensiles", fermé et ouvert.
-// C'est une fonction "auto-exécutante" comme les 2 au dessus.
 (function menuUste() {
   let everyUstensil = recipes.map((recipe) => recipe.ustensils);
   // Dans le tableau "recipes" des recettes, la fonction "map()" prend chaque élément,
@@ -677,17 +619,15 @@ function showTag3(e) {
   // pour faire le tri dans la liste des ustensiles affichés et dans les recettes.
   function getInputText() {
     const searchMenu = input3.value;
+    const lowerSearchMenu = searchMenu.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     // Constante utilisée pour contenir les ustensiles triés.
     const newUstensils = [];
 
-    // Variable utilisée pour contenir les recettes triées.
-    const menuInputRecipes = [];
-
     // On vide la liste.
     fullList3.innerText = '';
 
-    // Si 1 ou 2 caractères sont tapés, tous les ustensiles et toutes les recettes restent.
+    // Si 1 ou 2 caractères sont tapés, tous les ustensiles restent.
     if (searchMenu.length <= 2) {
       for (const uste of everyUstensil) {
         const dropLine = document.createElement('span');
@@ -700,12 +640,10 @@ function showTag3(e) {
       showRecipes2();
     }
     // Sinon, si 3 caractères ou plus sont tapés, seuls apparaissent les ustensiles
-    // appartenant aux recettes dont au moins un ustensile contient la valeur de l'input,
-    // ainsi que les recettes correspondantes.
+    // dont le nom (en minuscules et sans accent) contient la valeur de l'input.
     else {
-      // Tri des ustensiles.
       for (const newUste of everyUstensil) {
-        if (newUste.includes(searchMenu)) {
+        if (newUste.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchMenu)) {
           newUstensils.push(newUste);
           const dropLine = document.createElement('span');
           dropLine.className = 'exp-drop-line';
@@ -716,20 +654,6 @@ function showTag3(e) {
           dropLine.addEventListener('click', showTag3);
         }
       }
-      // Tri des recettes.
-      for (const recipe of recipes) {
-        // Pour chaque recette, on crée le tableau de ses noms d'ustensiles.
-        let everyRecipeUste = recipe.ustensils;
-        everyRecipeUste = everyRecipeUste.sort();
-
-        // Si au moins l'un des ustensiles contient la valeur de l'input,
-        // la recette est ajoutée au tableau des recettes triées par input.
-        const inclut = (element) => element.includes(searchMenu);
-        if (everyRecipeUste.some(inclut) === true) {
-          menuInputRecipes.push(recipe);
-        }
-      }
-      showRecipes2(menuInputRecipes);
     }
   }
   input3.addEventListener('input', getInputText);
@@ -756,10 +680,8 @@ function fillArticle(recipe) {
 }
 
 // Montre toutes les cartes de recettes remplies dynamiquement.
-// eslint-disable-next-line no-shadow
 function showRecipes1(recipes) {
   mainSection.innerText = '';
-  // eslint-disable-next-line no-restricted-syntax
   for (const recipe of recipes) {
     const card = fillArticle(recipe);
     mainSection.appendChild(card);
@@ -795,7 +717,6 @@ function showIngrsByRecipe(recettes) {
 // Montre tous les appareils dans le deuxième menu.
 function showApps(everyAppliance) {
   fullList2.innerText = '';
-  // eslint-disable-next-line no-restricted-syntax
   for (const appli of everyAppliance) {
     const dropLine = document.createElement('span');
     dropLine.className = 'exp-drop-line';
