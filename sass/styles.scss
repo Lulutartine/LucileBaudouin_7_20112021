@@ -39,19 +39,32 @@ header {
             background: $lightGrey;
             font-family: "Lato", sans-serif;
             font-size: 18px;
+<<<<<<< Updated upstream
             width: 1130px;
             height: 65px;
+=======
+            width: 94%;
+            outline: none;
+>>>>>>> Stashed changes
             padding: 0 20px;
             border-radius: 5px 0 0 5px;
+            border-width: 0px;
         }
         >#search-input:focus {
             outline: none;
         }
+<<<<<<< Updated upstream
+=======
+        // Pseudo-élément "placeholder" pour modifier son style.
+        >#search-input::placeholder {
+            color: black;
+            opacity: 25%;
+        }
+>>>>>>> Stashed changes
 
         // Bouton avec loupe.
         >#search-button {
-            width: 70px;
-            height: 69px;
+            width: 6%;
             padding: 0;
             border-radius: 0 5px 5px 0;
             &:hover, &:focus {
@@ -184,22 +197,47 @@ header {
                 width: 600px;
                 height: 30px;
                 border-radius: 5px;
-                border-width: 1px;
+                border-width: 0px;
             }
+<<<<<<< Updated upstream
+=======
+            // Pseudo-élément "placeholder" pour modifier son style.
+            >.drop-input::placeholder {
+                color: $lightGrey;
+            }
+>>>>>>> Stashed changes
             
             // Input des ingrédients.
             >#drop1-input {
                 background: $colorIngr;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
             }
             
             // Input des appareils.
             >#drop2-input {
                 background: $colorAppa;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
             }
             
             // Input des ustensiles.
             >#drop3-input {
                 background: $colorUste;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
             }
             
             // Flèche vers le haut.
@@ -288,6 +326,7 @@ main {
             background: #C7BEBE;
             width: $card;
             height: 178px;
+            border-radius: 5px 5px 0px 0px;
         }
 
         // Bas de la carte pour les textes.
@@ -296,6 +335,7 @@ main {
             font-family: "Lato", sans-serif;
             width: $card;
             height: 186px;
+            border-radius: 0px 0px 5px 5px;
 
             // Titre et durée.
             >.bottom-title-time {
