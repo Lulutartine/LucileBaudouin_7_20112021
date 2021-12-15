@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-/* eslint-disable implicit-arrow-linebreak */
->>>>>>> Stashed changes
 // Ce fichier contient le code nécessaire à la mise en place de la deuxième implémentation
 // de l'algorithme par le biais des propriétés de tableaux telles que filter().
 
@@ -54,11 +50,7 @@ export default function triParFilter(callback) {
     if (newRecipes.length === 0) {
       noRecipeLine.classList.replace('no-recipe-line', 'no-recipe-line-open');
     }
-<<<<<<< Updated upstream
     // Si le tableau n'est pas vide mais s'il l'a été précédemment, le message disparait.
-=======
-    // Si le tableau n'est pas vide mais qu'il l'a été précédemment, le message disparait.
->>>>>>> Stashed changes
     else if (noRecipeLine.classList.contains('no-recipe-line-open')) {
       noRecipeLine.classList.replace('no-recipe-line-open', 'no-recipe-line');
     }
