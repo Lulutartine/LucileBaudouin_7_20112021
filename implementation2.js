@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream:implementation2.js
+=======
+/* eslint-disable implicit-arrow-linebreak */
+>>>>>>> Stashed changes:implementation1.js
 // Ce fichier contient le code nécessaire à la mise en place de la deuxième implémentation
 // de l'algorithme par le biais des propriétés de tableaux telles que filter().
 
@@ -24,7 +28,7 @@ let newRecipes = [];
 export default function triParFilter(callback) {
   mainSection.innerText = '';
   // Si 1 ou 2 caractères sont tapés.
-  if (searchInput.value.length <= 2) {
+    if (searchInput.value.length <= 2) {
     if (noRecipeLine.classList.contains('no-recipe-line-open')) {
       noRecipeLine.classList.replace('no-recipe-line-open', 'no-recipe-line');
     }
@@ -32,7 +36,10 @@ export default function triParFilter(callback) {
     return;
   }
   // Si 3 caractères ou plus sont tapés.
+<<<<<<< Updated upstream:implementation2.js
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:implementation1.js
   // eslint-disable-next-line no-else-return
   else {
     // Le contenu de l'input est mis en minuscule et ses accents sont retirés.
@@ -41,6 +48,7 @@ export default function triParFilter(callback) {
     mainSection.innerText = '';
 
     // La filtration se fait sur le nom ou sur la description ou sur les ingrédients.
+<<<<<<< Updated upstream:implementation2.js
 =======
   else {
     // Le contenu de l'input est mis en minuscule et ses accents sont retirés.
@@ -50,6 +58,8 @@ export default function triParFilter(callback) {
 
     // Le filtre est appliqué sur le nom ou sur la description ou sur les ingrédients.
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes:implementation1.js
     newRecipes = recipes.filter((element) =>
       element.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchInput)
       || element.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(lowerSearchInput)

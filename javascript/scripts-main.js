@@ -11,6 +11,7 @@ import triParFilter from '../implementation2';
 const searchInput = document.querySelector('#search-input');
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // Listener utilisant l'implémentation 2.
 searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
 =======
@@ -36,6 +37,10 @@ const searchInput = document.querySelector('#search-input');
 // Listener utilisant l'implémentation 2.
 searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
 >>>>>>> Stashed changes
+>>>>>>> Stashed changes
+=======
+// Listener utilisant l'implémentation 2.
+searchInput.addEventListener('input', () => { triParFilter(showRecipes2); });
 >>>>>>> Stashed changes
 
 // Constantes globales pour les menus.
