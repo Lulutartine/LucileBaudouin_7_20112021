@@ -5,6 +5,7 @@
 import { recipes } from './recipes';
 
 // Constante globale pour récupérer le contenu de l'input principal.
+<<<<<<< Updated upstream
 const searchInput = document.querySelector('#search-input');
 
 // Crée la ligne du message "Aucune recette...".
@@ -19,6 +20,19 @@ const mainSection = document.querySelector('#main-section');
 
 // Variable globale pour le tableau des recettes triées par l'input principal.
 let newRecipes = [];
+=======
+  const searchInput = document.querySelector('#search-input');
+// Crée la ligne du message "Aucune recette...".
+  const noRecipe = document.querySelector('#no-recipe');
+  const noRecipeLine = document.createElement('p');
+noRecipeLine.className = 'no-recipe-line';
+noRecipeLine.innerText = 'Aucune recette ne correspond au terme recherché...';
+noRecipe.appendChild(noRecipeLine);
+// Constante globale pour la partie affichant les recettes.
+  const mainSection = document.querySelector('#main-section');
+// Variable globale pour le tableau des recettes triées par l'input principal.
+  let newRecipes = [];
+>>>>>>> Stashed changes
 
 // Cette fonction effectue le tri des recettes.
 export default function triParBoucle(callback) {

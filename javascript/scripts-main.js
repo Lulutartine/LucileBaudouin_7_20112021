@@ -1,8 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-shadow */
-/* eslint-disable no-use-before-define */
 // Récupération des données "recipes" du fichier.
 import { recipes } from '../recipes';
 
@@ -14,17 +9,6 @@ import triParBoucle from '../implementation1';
 
 // Constante globale pour récupérer le contenu de l'input principal.
 const searchInput = document.querySelector('#search-input');
-
-// Récupère le contenu du champ de recherche principal durant la frappe.
-// FONCTION DESACTIVEE !!
-/*
-function getSearchInputText(el) {
-  el.preventDefault();
-  // eslint-disable-next-line no-console
-  console.log(el.target.value);
-}
-searchInput.addEventListener('input', getSearchInputText);
-*/
 
 // Listener utilisant l'implémentation 1.
 searchInput.addEventListener('input', () => { triParBoucle(showRecipes2); });
