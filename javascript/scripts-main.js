@@ -254,8 +254,7 @@ function appaRecipes(chosenTags2, newTagRecipes1) {
       // Pour chaque recette, on récupère son nom d'appareil (un seul par recette).
       const everyRecipeApp = recipe.appliance;
       for (const tag of chosenTags2) {
-        // Si le nom d'appareil contient le tag,
-        // la recette est ajoutée au tableau des recettes triées par tag.
+        // Si le nom d'appareil contient le tag, la recette est ajoutée au tableau des recettes triées par tag.
         if (everyRecipeApp.includes(tag)) {
           newTagRecipes2.push(recipe);
         }
@@ -286,8 +285,7 @@ function usteRecipes(chosenTags3, newTagRecipes2) {
       let everyRecipeUste = recipe.ustensils;
       everyRecipeUste = everyRecipeUste.sort();
 
-      // Si chacun des tags affichés est présent dans la recette,
-      // elle est ajoutée au tableau des recettes triées par tags.
+      // Si chacun des tags affichés est présent dans la recette, elle est ajoutée au tableau des recettes triées par tags.
       const recipeUste = (element) => everyRecipeUste.includes(element);
       if (chosenTags3.every(recipeUste) === true) {
         newTagRecipes3.push(recipe);
