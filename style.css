@@ -1,0 +1,302 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  width: 1240px;
+  padding: 40px 100px;
+  margin: auto;
+}
+
+header {
+  width: 1240px;
+  color: #d04f4f;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+header > #logo-p {
+  line-height: 0;
+  margin: auto 0;
+}
+header > h1 {
+  width: 268px;
+  height: 47px;
+  margin: 20px auto 20px auto;
+}
+header > #search {
+  display: flex;
+  justify-content: center;
+}
+header > #search > #search-input,
+header > #search > #search-button {
+  background: #E7E7E7;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  width: 1130px;
+  height: 65px;
+  outline: none;
+  padding: 0 20px;
+  border-color: #E7E7E7;
+  border-radius: 5px 0 0 5px;
+  border-width: 0px;
+}
+header > #search > #search-input:focus {
+  outline: none;
+}
+header > #search > #search-input::placeholder {
+  color: #4e4e4e;
+}
+header > #search > #search-button {
+  width: 70px;
+  height: 69px;
+  padding: 0;
+  border-radius: 0 5px 5px 0;
+}
+header > #search > #search-button:hover, header > #search > #search-button:focus {
+  background: #cecece;
+}
+header > #search > #search-button > #loupe {
+  margin: 19px;
+}
+
+#tagLine {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+#tagLine > .chosen-tag-1,
+#tagLine > .chosen-tag-2,
+#tagLine > .chosen-tag-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  padding: 7px 20px;
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+}
+#tagLine > .chosen-tag-1 > .tag-text,
+#tagLine > .chosen-tag-2 > .tag-text,
+#tagLine > .chosen-tag-3 > .tag-text {
+  margin-right: 10px;
+}
+#tagLine > .chosen-tag-1 > .tag-img,
+#tagLine > .chosen-tag-2 > .tag-img,
+#tagLine > .chosen-tag-3 > .tag-img {
+  cursor: pointer;
+}
+#tagLine > .chosen-tag-1 {
+  background: #3282F7;
+}
+#tagLine > .chosen-tag-2 {
+  background: #68D9A4;
+}
+#tagLine > .chosen-tag-3 {
+  background: #ED6454;
+}
+
+#dropdown-line {
+  display: flex;
+  margin-top: 10px;
+  position: absolute;
+}
+#dropdown-line > .dropdown-closed {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  width: 130px;
+  height: 69px;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+#dropdown-line > #drop-ingr-closed,
+#dropdown-line #drop-ingr-open {
+  background: #3282F7;
+  margin: 0 10px 10px 0;
+}
+#dropdown-line > #drop-appa-closed,
+#dropdown-line #drop-appa-open {
+  background: #68D9A4;
+  margin: 0 10px 10px 10px;
+}
+#dropdown-line > #drop-uste-closed,
+#dropdown-line #drop-uste-open {
+  background: #ED6454;
+  margin: 0 0 10px 10px;
+}
+#dropdown-line > .dropdown-open {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  width: 630px;
+  height: 330px;
+  padding: 0 20px 0 20px;
+  border-radius: 5px;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 630px;
+  margin: 20px 40px 0 40px;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > .drop-input {
+  display: flex;
+  color: white;
+  font-size: 18px;
+  width: 600px;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > .drop-input::placeholder {
+  color: #4e4e4e;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop1-input {
+  background: #3282F7;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop2-input {
+  background: #68D9A4;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > #drop3-input {
+  background: #ED6454;
+}
+#dropdown-line > .dropdown-open > .drop-open-1stLine > .up-arrow {
+  display: flex;
+}
+#dropdown-line > .dropdown-open > .expanded-drop {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-y: auto;
+  width: 630px;
+  padding: 0 20px 0 20px;
+  border-radius: 5px;
+}
+#dropdown-line > .dropdown-open > .expanded-drop > .exp-drop-line {
+  display: inline-block;
+  width: 33%;
+  padding: 3px 0;
+}
+#dropdown-line > .dropdown-open > .expanded-drop > .exp-drop-line:hover {
+  color: black;
+}
+#dropdown-line > .dropdown-open > #expanded-drop1 {
+  background: #3282F7;
+}
+#dropdown-line > .dropdown-open > #expanded-drop2 {
+  background: #68D9A4;
+}
+#dropdown-line > .dropdown-open > #expanded-drop3 {
+  background: #ED6454;
+}
+
+#no-recipe {
+  text-align: center;
+  margin-top: 20px;
+}
+#no-recipe > .no-recipe-line {
+  display: none;
+}
+#no-recipe > .no-recipe-line-open {
+  display: inline;
+  color: #d04f4f;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  top: 115px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 115px;
+  z-index: 0;
+  position: static;
+}
+main > .section {
+  width: 380px;
+  height: 364px;
+  margin-bottom: 50px;
+}
+main > .section > .section-top {
+  background: #c7bebe;
+  width: 380px;
+  height: 178px;
+}
+main > .section > .section-bottom {
+  background: #E7E7E7;
+  font-family: "Lato", sans-serif;
+  width: 380px;
+  height: 186px;
+}
+main > .section > .section-bottom > .bottom-title-time {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  width: 340px;
+  height: 50px;
+  padding: 0 20px;
+}
+main > .section > .section-bottom > .bottom-title-time > .bottom-title {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+}
+main > .section > .section-bottom > .bottom-title-time > .bottom-time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+  width: 90px;
+  height: 50px;
+}
+main > .section > .section-bottom > .bottom-title-time > .bottom-time > #temps {
+  margin-right: 5px;
+}
+main > .section > .section-bottom > .bottom-descr {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  width: 340px;
+  height: 136px;
+  padding: 0 20px;
+}
+main > .section > .section-bottom > .bottom-descr > .bottom-ingr {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 170px;
+  height: 136px;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+main > .section > .section-bottom > .bottom-descr > .bottom-recipe {
+  font-family: "Roboto", sans-serif;
+  width: 170px;
+  height: 120px;
+  overflow: hidden;
+  padding-top: 5px;
+  margin-bottom: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
