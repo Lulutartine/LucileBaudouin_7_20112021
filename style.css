@@ -7,7 +7,7 @@ body {
 
 header {
   width: 1240px;
-  color: #D04F4F;
+  color: #d04f4f;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
@@ -25,7 +25,8 @@ header > #search {
   display: flex;
   justify-content: center;
 }
-header > #search > #search-input, header > #search > #search-button {
+header > #search > #search-input,
+header > #search > #search-button {
   background: #E7E7E7;
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -61,7 +62,9 @@ header > #search > #search-button > #loupe {
   justify-content: flex-start;
   margin-top: 30px;
 }
-#tagLine > .chosen-tag-1, #tagLine > .chosen-tag-2, #tagLine > .chosen-tag-3 {
+#tagLine > .chosen-tag-1,
+#tagLine > .chosen-tag-2,
+#tagLine > .chosen-tag-3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,10 +75,14 @@ header > #search > #search-button > #loupe {
   border-radius: 5px;
   margin: 0 10px 10px 0;
 }
-#tagLine > .chosen-tag-1 > .tag-text, #tagLine > .chosen-tag-2 > .tag-text, #tagLine > .chosen-tag-3 > .tag-text {
+#tagLine > .chosen-tag-1 > .tag-text,
+#tagLine > .chosen-tag-2 > .tag-text,
+#tagLine > .chosen-tag-3 > .tag-text {
   margin-right: 10px;
 }
-#tagLine > .chosen-tag-1 > .tag-img, #tagLine > .chosen-tag-2 > .tag-img, #tagLine > .chosen-tag-3 > .tag-img {
+#tagLine > .chosen-tag-1 > .tag-img,
+#tagLine > .chosen-tag-2 > .tag-img,
+#tagLine > .chosen-tag-3 > .tag-img {
   cursor: pointer;
 }
 #tagLine > .chosen-tag-1 {
@@ -108,15 +115,18 @@ header > #search > #search-button > #loupe {
   padding: 0 20px;
   border-radius: 5px;
 }
-#dropdown-line > #drop-ingr-closed, #dropdown-line #drop-ingr-open {
+#dropdown-line > #drop-ingr-closed,
+#dropdown-line #drop-ingr-open {
   background: #3282F7;
   margin: 0 10px 10px 0;
 }
-#dropdown-line > #drop-appa-closed, #dropdown-line #drop-appa-open {
+#dropdown-line > #drop-appa-closed,
+#dropdown-line #drop-appa-open {
   background: #68D9A4;
   margin: 0 10px 10px 10px;
 }
-#dropdown-line > #drop-uste-closed, #dropdown-line #drop-uste-open {
+#dropdown-line > #drop-uste-closed,
+#dropdown-line #drop-uste-open {
   background: #ED6454;
   margin: 0 0 10px 10px;
 }
@@ -221,7 +231,7 @@ header > #search > #search-button > #loupe {
 }
 #no-recipe > .no-recipe-line-open {
   display: inline;
-  color: #D04F4F;
+  color: #d04f4f;
   font-size: 16px;
   font-weight: bold;
   padding: 15px;
@@ -244,7 +254,7 @@ main > .section {
   margin-bottom: 50px;
 }
 main > .section > .section-top {
-  background: #C7BEBE;
+  background: #c7bebe;
   width: 380px;
   height: 178px;
   border-radius: 5px 5px 0px 0px;
