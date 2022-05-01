@@ -1,0 +1,347 @@
+@import "libs/variables.scss";
+
+body {
+    font-family: "DM Sans", sans-serif;
+    width: $page;
+    padding: 40px 100px;
+    margin: 0;
+}
+
+header {
+    width: $page;
+    color: #D04F4F;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    >#logo-p {
+        line-height: 0;
+        margin: auto 0;
+    }
+
+    >h1 {
+        width: 268px;
+        height: 47px;
+        margin: 20px auto 20px auto;
+    }
+
+    >#search {
+        display: flex;
+        justify-content: center;
+        >#search-input, >#search-button {
+            background: $lightGrey;
+            font-family: "Lato", sans-serif;
+            font-size: 18px;
+            width: 1130px;
+            height: 65px;
+            padding: 0 20px;
+            border-radius: 5px 0 0 5px;
+            border-width: 0px;
+        }
+        >#search-input:focus {
+            outline: none;
+        }
+        >#search-input::placeholder {
+            color: black;
+            opacity: 25%;
+        }
+        >#search-button {
+            width: 6%;
+            padding: 0;
+            border-radius: 0 5px 5px 0;
+            &:hover, &:focus {
+                background: darken($lightGrey, 10);
+            }
+            >#loupe {
+                margin: 19px;
+            }
+        }
+    }
+}
+
+#tagLine {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 30px;
+
+    >.chosen-tag-1, >.chosen-tag-2, >.chosen-tag-3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        padding: 7px 20px;
+        border-radius: 5px;
+        margin: 0 10px 10px 0;
+
+        >.tag-text {
+            margin-right: 10px;
+        }
+
+        >.tag-img {
+            cursor: pointer;
+        }
+    }
+
+    >.chosen-tag-1 {
+        background: $colorIngr;
+    }
+
+    >.chosen-tag-2 {
+        background: $colorAppa;
+    }
+
+    >.chosen-tag-3 {
+        background: $colorUste;
+    }
+}
+
+#dropdown-line {
+    display: flex;
+    margin-top: 10px;
+    position: absolute;
+    
+    >.dropdown-closed {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        width: 130px;
+        height: 69px;
+        padding: 0 20px;
+        border-radius: 5px;
+    }
+    
+    >#drop-ingr-closed, #drop-ingr-open {
+        background: $colorIngr;
+        margin: 0 10px 10px 0;
+    }
+    
+    >#drop-appa-closed, #drop-appa-open {
+        background: $colorAppa;
+        margin: 0 10px 10px 10px;
+    }
+    
+    >#drop-uste-closed, #drop-uste-open {
+        background: $colorUste;
+        margin: 0 0 10px 10px;
+    }
+    
+    >.dropdown-open {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        width: 630px;
+        height: 324px;
+        padding: 0 20px 0 20px;
+        border-radius: 5px;
+    
+        >.drop-open-1stLine {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 630px;
+            margin: 20px 40px 0 40px;
+        
+            >.drop-input {
+                display: flex;
+                color: lighten($lightGrey, 10);
+                font-size: 18px;
+                width: 600px;
+                height: 30px;
+                border-radius: 5px;
+                border-width: 0px;
+            }
+            >.drop-input::placeholder {
+                color: $lightGrey;
+            }
+            
+            >#drop1-input {
+                background: $colorIngr;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
+            }
+            
+            >#drop2-input {
+                background: $colorAppa;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
+            }
+            
+            >#drop3-input {
+                background: $colorUste;
+                border-color: transparent;
+                color: white;
+                &:focus-visible {
+                    border-style: none;
+                    outline-style: none;
+                }
+            }
+            
+            >.up-arrow {
+                display: flex;
+            }
+        }
+        
+        >.expanded-drop {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            overflow-y: auto;
+            width: 630px;
+            padding: 0 20px 0 20px;
+            border-radius: 5px;
+
+            >.exp-drop-line {
+                display: inline-block;
+                width: 33%;
+                padding: 3px 0;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        
+        >#expanded-drop1 {
+            background: $colorIngr;
+        }
+        
+        >#expanded-drop2 {
+            background: $colorAppa;
+        }
+        
+        >#expanded-drop3 {
+            background: $colorUste;
+        }
+    }
+}
+
+#no-recipe {
+    text-align: center;
+    margin-top: 20px;
+
+    >.no-recipe-line {
+        display: none;
+    }
+    
+    >.no-recipe-line-open {
+        display: inline;
+        color: #D04F4F;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px;
+        border-radius: 5px;
+        position: relative;
+        top: 115px;
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 115px;
+    z-index: 0;
+    position: static;
+
+    >.section {
+        width: $card;
+        height: 364px;
+        margin-bottom: 50px;
+
+        >.section-top {
+            background: #C7BEBE;
+            width: $card;
+            height: 178px;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        >.section-bottom {
+            background: $lightGrey;
+            font-family: "Lato", sans-serif;
+            width: $card;
+            height: 186px;
+            border-radius: 0px 0px 5px 5px;
+
+            >.bottom-title-time {
+                display: flex;
+                justify-content: center;
+                font-size: 18px;
+                width: 340px;
+                height: $cardTitle;
+                padding: 0 20px;
+
+                >.bottom-title {
+                    display: flex;
+                    align-items: center;
+                    width: 250px;
+                    height: $cardTitle;
+                }
+
+                >.bottom-time {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-weight: bold;
+                    width: 90px;
+                    height: $cardTitle;
+
+                    >#temps {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            >.bottom-descr {
+                display: flex;
+                justify-content: center;
+                font-size: 12px;
+                width: 340px;
+                height: 136px;
+                padding: 0 20px;
+
+                >.bottom-ingr {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    width: 170px;
+                    height: 136px;
+                    padding-top: 5px;
+                    padding-right: 10px;
+                }
+
+                >.bottom-recipe {
+                    font-family: "Roboto", sans-serif;
+                    width: 170px;
+                    height: 120px;
+                    overflow: hidden;
+                    padding-top: 5px;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}
