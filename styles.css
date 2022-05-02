@@ -2,12 +2,12 @@ body {
   font-family: "DM Sans", sans-serif;
   width: 1240px;
   padding: 40px 100px;
-  margin: 0;
+  margin: auto;
 }
 
 header {
   width: 1240px;
-  color: #D04F4F;
+  color: #d04f4f;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
@@ -25,16 +25,18 @@ header > #search {
   display: flex;
   justify-content: center;
 }
-header > #search > #search-input, header > #search > #search-button {
-  background: #E7E7E7;
+header > #search > #search-input,
+header > #search > #search-button {
+  background: #e7e7e7;
   font-family: "Lato", sans-serif;
   font-size: 18px;
   width: 1130px;
   height: 65px;
   outline: none;
   padding: 0 20px;
-  border-color: #E7E7E7;
+  border-color: #e7e7e7;
   border-radius: 5px 0 0 5px;
+  border-width: 0px;
 }
 header > #search > #search-input:focus {
   outline: none;
@@ -48,7 +50,8 @@ header > #search > #search-button {
   padding: 0;
   border-radius: 0 5px 5px 0;
 }
-header > #search > #search-button:hover, header > #search > #search-button:focus {
+header > #search > #search-button:hover,
+header > #search > #search-button:focus {
   background: #cecece;
 }
 header > #search > #search-button > #loupe {
@@ -62,7 +65,9 @@ header > #search > #search-button > #loupe {
   justify-content: flex-start;
   margin-top: 30px;
 }
-#tagLine > .chosen-tag-1, #tagLine > .chosen-tag-2, #tagLine > .chosen-tag-3 {
+#tagLine > .chosen-tag-1,
+#tagLine > .chosen-tag-2,
+#tagLine > .chosen-tag-3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,20 +78,24 @@ header > #search > #search-button > #loupe {
   border-radius: 5px;
   margin: 0 10px 10px 0;
 }
-#tagLine > .chosen-tag-1 > .tag-text, #tagLine > .chosen-tag-2 > .tag-text, #tagLine > .chosen-tag-3 > .tag-text {
+#tagLine > .chosen-tag-1 > .tag-text,
+#tagLine > .chosen-tag-2 > .tag-text,
+#tagLine > .chosen-tag-3 > .tag-text {
   margin-right: 10px;
 }
-#tagLine > .chosen-tag-1 > .tag-img, #tagLine > .chosen-tag-2 > .tag-img, #tagLine > .chosen-tag-3 > .tag-img {
+#tagLine > .chosen-tag-1 > .tag-img,
+#tagLine > .chosen-tag-2 > .tag-img,
+#tagLine > .chosen-tag-3 > .tag-img {
   cursor: pointer;
 }
 #tagLine > .chosen-tag-1 {
-  background: #3282F7;
+  background: #3282f7;
 }
 #tagLine > .chosen-tag-2 {
-  background: #68D9A4;
+  background: #68d9a4;
 }
 #tagLine > .chosen-tag-3 {
-  background: #ED6454;
+  background: #ed6454;
 }
 
 #dropdown-line {
@@ -109,16 +118,19 @@ header > #search > #search-button > #loupe {
   padding: 0 20px;
   border-radius: 5px;
 }
-#dropdown-line > #drop-ingr-closed, #dropdown-line #drop-ingr-open {
-  background: #3282F7;
+#dropdown-line > #drop-ingr-closed,
+#dropdown-line #drop-ingr-open {
+  background: #3282f7;
   margin: 0 10px 10px 0;
 }
-#dropdown-line > #drop-appa-closed, #dropdown-line #drop-appa-open {
-  background: #68D9A4;
+#dropdown-line > #drop-appa-closed,
+#dropdown-line #drop-appa-open {
+  background: #68d9a4;
   margin: 0 10px 10px 10px;
 }
-#dropdown-line > #drop-uste-closed, #dropdown-line #drop-uste-open {
-  background: #ED6454;
+#dropdown-line > #drop-uste-closed,
+#dropdown-line #drop-uste-open {
+  background: #ed6454;
   margin: 0 0 10px 10px;
 }
 #dropdown-line > .dropdown-open {
@@ -149,19 +161,22 @@ header > #search > #search-button > #loupe {
   width: 600px;
   height: 30px;
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 0px;
 }
-#dropdown-line > .dropdown-open > .drop-open-1stLine > .drop-input::placeholder {
+#dropdown-line
+  > .dropdown-open
+  > .drop-open-1stLine
+  > .drop-input::placeholder {
   color: #4e4e4e;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop1-input {
-  background: #3282F7;
+  background: #3282f7;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop2-input {
-  background: #68D9A4;
+  background: #68d9a4;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > #drop3-input {
-  background: #ED6454;
+  background: #ed6454;
 }
 #dropdown-line > .dropdown-open > .drop-open-1stLine > .up-arrow {
   display: flex;
@@ -186,13 +201,13 @@ header > #search > #search-button > #loupe {
   color: black;
 }
 #dropdown-line > .dropdown-open > #expanded-drop1 {
-  background: #3282F7;
+  background: #3282f7;
 }
 #dropdown-line > .dropdown-open > #expanded-drop2 {
-  background: #68D9A4;
+  background: #68d9a4;
 }
 #dropdown-line > .dropdown-open > #expanded-drop3 {
-  background: #ED6454;
+  background: #ed6454;
 }
 
 #no-recipe {
@@ -204,7 +219,7 @@ header > #search > #search-button > #loupe {
 }
 #no-recipe > .no-recipe-line-open {
   display: inline;
-  color: #D04F4F;
+  color: #d04f4f;
   font-size: 16px;
   font-weight: bold;
   padding: 15px;
@@ -227,12 +242,12 @@ main > .section {
   margin-bottom: 50px;
 }
 main > .section > .section-top {
-  background: #C7BEBE;
+  background: #c7bebe;
   width: 380px;
   height: 178px;
 }
 main > .section > .section-bottom {
-  background: #E7E7E7;
+  background: #e7e7e7;
   font-family: "Lato", sans-serif;
   width: 380px;
   height: 186px;
